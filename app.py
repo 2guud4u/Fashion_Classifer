@@ -10,6 +10,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 def allowed_file(filename):
+    print(filename)
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
@@ -29,6 +30,7 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            print(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             
     return '''
     <!doctype html>
@@ -39,3 +41,7 @@ def upload_file():
       <input type=submit value=Upload>
     </form>
     '''
+
+def classify_image(image_path):
+    # fashion, brands, gen
+    pass
