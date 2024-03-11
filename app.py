@@ -1,6 +1,10 @@
 import os
 from flask import Flask, flash, request, redirect, url_for
 from werkzeug.utils import secure_filename
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras import layers
+
 
 UPLOAD_FOLDER = 'images'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
@@ -15,6 +19,9 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route('/', methods=['GET', 'POST'])
+
+new_model = keras.models.load_model('my_model.h5')
+
 def upload_file():
     if request.method == 'POST':
         # check if the post request has the file part
