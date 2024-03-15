@@ -4,10 +4,16 @@
     <title>Classification Results</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link href="css/style.css" rel="stylesheet"> -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
   </head>
   <body>
-    <p>{{name}}</p>
-    <img src="{{ url_for('download_file', name=name) }}" alt="{{name}}">
+    <main class="container">
+      <h1>Classification Results</h1>
+      <p>{{class_}}</p>
+      <img src="{{ url_for('download_file', name=name) }}" alt="{{name}}" width="200px">
+    </main>
   </body>
 </html>
