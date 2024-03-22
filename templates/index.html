@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Classification Results</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
-    />
-  </head>
-  <body>
-    <main class="container">
-      <h1>Upload image below!</h1>
-      <form method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" accept=".jpg,.jpeg">
-        <input type="submit" value="Upload">
-      </form>
-    </main>
-  </body>
-</html>
+{% extends "layout.html" %}
+
+{% block head %}
+    <title>Fasion Classifier</title>
+{% endblock %}
+
+{% block body %}
+  <h1>Upload image below!</h1>
+  <form method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".jpg,.jpeg">
+    <input type="submit" value="Upload">
+  </form>
+{% endblock %}

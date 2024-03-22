@@ -161,3 +161,7 @@ cython_debug/
 
 # I hate MacOS
 .DS_Store
+
+# Trained weights files
+*.h5
+*.keras
